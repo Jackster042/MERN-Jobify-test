@@ -1,0 +1,85 @@
+feemail042
+y5zbm4Ty74ao9v0S
+
+
+
+mongodb+srv://feemail042:y5zbm4Ty74ao9v0S@jobifycluster.ihlyt5m.mongodb.net/?retryWrites=true&w=majority&appName=jobifyCluster
+
+// ALL JOBS
+// res.status(200).json({ jobs });
+// console.log(jobss);
+// res.send(jobs);
+
+// CREATE JOB
+// if (!company || !position) {
+//   res.status(400).json({ message: "please provide company and position" });
+// }
+// const id = nanoid();
+// const job = { id, company, position };
+// jobs.push(job);
+// res.status(200).json({ job });
+
+// SINGLE JOB
+// console.log(id);
+// const job = jobs.find((job) => job.id === id);
+// console.log(job);
+// if (!job) {
+//   throw new Error("no job with that id");
+//   return res.status(404).json({ msg: `no job with id:${id}` });
+// }
+// res.status(200).json({ job });
+
+// EDIT JOB
+
+// const { company, position } = req.body;
+// if (!company || !position) {
+//   return res
+//     .status(404)
+//     .json({ message: "please provide company and position" });
+// }
+// const { id } = req.params;
+// const job = jobs.find((job) => job.id === id);
+// if (!job) {
+//   return res.status(404).json({ msg: `no job with id ${id}` });
+// }
+// job.company = company;
+// job.position = position;
+// res.status(200).json({ msg: "job modified", job });
+
+// DELETE JOB
+  // const job = jobs.find((job) => job.id === id);
+  // if (!job) {
+  //   return res.status(404).json({ msg: `no job with id ${id}` });
+  // }
+  // const newJobs = jobs.filter((job) => job.id !== id);
+  // jobs = newJobs;
+  // console.log(newJobs);
+  // res.status(200).json({ msg: "job deleted" });
+
+    // FIRST MIDDLEWARE FUNCTION TO SETUP RULES
+  // [
+  //   body("name")
+  //     .notEmpty()
+  //     .withMessage("name is required")
+  //     .isLength({ min: 30 })
+  //     .withMessage("name must be at least 30 characters long"),
+  // ],
+  //  SECOND TO CHECK FOR THE POSSIBLE ERRORS
+  // (req, res, next) => {
+  //   const errors = validationResult(req);
+  //   if (!errors.isEmpty()) {
+  //     const errorMessages = errors.array().map((error) => error.msg);
+  //     return res.status(400).json({ errors: errorMessages });
+  //   }
+  //   next();
+  // },
+
+// CONTAINS VALUES WE WANT TO VALIDATE
+  // export const validateTest = withValidationErrors([
+//   body("name")
+//     .notEmpty()
+//     .withMessage("name is required")
+//     .isLength({ min: 3, max: 50 })
+//     .withMessage("name must be between 3 and 50 characters log")
+//     .trim(),
+// ]);

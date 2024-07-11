@@ -1,0 +1,282 @@
+[
+  {
+    "company": "Google",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Mountain View, CA"
+  },
+  {
+    "company": "Amazon",
+    "position": "Data Scientist",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Seattle, WA"
+  },
+  {
+    "company": "Microsoft",
+    "position": "Product Manager",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Redmond, WA"
+  },
+  {
+    "company": "Facebook",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Menlo Park, CA"
+  },
+  {
+    "company": "Apple",
+    "position": "iOS Developer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Cupertino, CA"
+  },
+  {
+    "company": "Tesla",
+    "position": "Electrical Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Palo Alto, CA"
+  },
+  {
+    "company": "Uber",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "San Francisco, CA"
+  },
+  {
+    "company": "Airbnb",
+    "position": "Data Scientist",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Francisco, CA"
+  },
+  {
+    "company": "Netflix",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Los Gatos, CA"
+  },
+  {
+    "company": "Lyft",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Francisco, CA"
+  },
+  {
+    "company": "Twitter",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "San Francisco, CA"
+  },
+  {
+    "company": "Salesforce",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Francisco, CA"
+  },
+  {
+    "company": "Intel",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Santa Clara, CA"
+  },
+  {
+    "company": "Cisco Systems",
+    "position": "Network Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Jose, CA"
+  },
+  {
+    "company": "IBM",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Armonk, NY"
+  },
+  {
+    "company": "Oracle",
+    "position": "Database Administrator",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Redwood City, CA"
+  },
+  {
+    "company": "Dell",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Round Rock, TX"
+  },
+  {
+    "company": "HP",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Palo Alto, CA"
+  },
+  {
+    "company": "VMware",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Palo Alto, CA"
+  },
+  {
+    "company": "NVIDIA",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Santa Clara, CA"
+  },
+  {
+    "company": "AMD",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Santa Clara, CA"
+  },
+  {
+    "company": "Intel",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Santa Clara, CA"
+  },
+  {
+    "company": "Qualcomm",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "San Diego, CA"
+  },
+  {
+    "company": "Broadcom",
+    "position": "Software Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Jose, CA"
+  },
+  {
+    "company": "Texas Instruments",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Dallas, TX"
+  },
+  {
+    "company": "Micron Technology",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Boise, ID"
+  },
+  {
+    "company": "Western Digital",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "San Jose, CA"
+  },
+  {
+    "company": "Seagate Technology",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Cupertino, CA"
+  },
+  {
+    "company": "Hewlett Packard Enterprise",
+    "position": "Software Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "San Jose, CA"
+  },
+  {
+    "company": "Lenovo",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Raleigh, NC"
+  },
+  {
+    "company": "Asus",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Fremont, CA"
+  },
+  {
+    "company": "Acer",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "San Jose, CA"
+  },
+  {
+    "company": "MSI",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "City of Industry, CA"
+  },
+  {
+    "company": "Razer",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Irvine, CA"
+  },
+  {
+    "company": "Logitech",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Lausanne, Switzerland"
+  },
+  {
+    "company": "Canon",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Melville, NY"
+  },
+  {
+    "company": "Epson",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Long Beach, CA"
+  },
+  {
+    "company": "Xerox",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Norwalk, CT"
+  },
+  {
+    "company": "Konica Minolta",
+    "position": "Hardware Engineer",
+    "jobStatus": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Ramsey, NJ"
+  },
+  {
+    "company": "Ricoh",
+    "position": "Hardware Engineer",
+    "jobStatus": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Malvern, PA"
+  }
+]
