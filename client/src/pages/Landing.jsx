@@ -13,7 +13,7 @@ function Landing() {
       <div className="container page">
         <div className="info">
           <h1>
-            Job <span>Tracking</span> App
+            Jobs <span>Tracking</span> App
           </h1>
           <p>
             "Discover your next career move with ease. Our job search platform
