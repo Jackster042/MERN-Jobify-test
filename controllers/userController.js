@@ -7,7 +7,8 @@ import User from "../models/UserModel.js";
 import cloudinary from "cloudinary";
 // FILE SYSTEM MODULE
 // WERE USING PROMISE IN ORDER TO USE ASYNC AWAIT INSTEAD OF CALLBACKnewUser
-import { promises as fs } from "fs";
+// import { promises as fs } from "fs";
+import { formatImage } from "../middleware/multerMiddleware.js";
 
 // CURRENT USER
 export const getCurrentUser = async (req, res) => {
@@ -30,8 +31,10 @@ export const updateUser = async (req, res) => {
   delete newUser.password;
 
   if (req.file) {
-    const response = await cloudinary.v2.uploader.upload(req.file.path);
-    await fs.unlink(req.file.path);
+    const file = formatImage(req.file);
+
+    const response = await cloudinary.v2.uploader.upload(file);
+    // await fs.unlink(req.file.path);
     newUser.avatar = response.secure_url;
     newUser.avatarPublicId = response.public_id;
   }
