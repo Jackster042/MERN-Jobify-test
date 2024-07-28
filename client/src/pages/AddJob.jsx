@@ -18,18 +18,21 @@ import customFetch from "../utils/customFetch";
 // SERVER IMPORT
 import { JOB_STATUS, JOB_TYPE } from "../../../utils/constants";
 
-export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  try {
-    await customFetch.post("/jobs", data);
-    toast.success("Job created successfully");
-    return redirect("all-jobs");
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
-};
+export const action =
+  (queryClient) =>
+  async ({ request }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+    try {
+      await customFetch.post("/jobs", data);
+      queryClient.invalidateQueries(["jobs"]);
+      toast.success("Job created successfully");
+      return redirect("all-jobs");
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+      return error;
+    }
+  };
 
 const AddJob = () => {
   const { user } = useOutletContext();

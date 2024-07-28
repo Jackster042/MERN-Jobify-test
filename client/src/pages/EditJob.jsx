@@ -6,36 +6,57 @@ import { toast } from "react-toastify";
 import customFetch from "../utils/customFetch";
 import { JOB_STATUS, JOB_TYPE } from "../../../utils/constants";
 import SubmitBtn from "../components/SubmitBtn";
+import { useQuery } from "@tanstack/react-query";
 
 // SETUP LOADER AND ACTION
 
+const singleQuery = (id) => {
+  return {
+    queryKey: ["job", id],
+    queryFn: async () => {
+      const { data } = await customFetch.get(`/jobs/${id}`);
+      return data;
+    },
+  };
+};
+
 // LOADER
-export const loader = async ({ params }) => {
-  try {
-    const { data } = await customFetch.get(`/jobs/${params.id}`);
-    return data;
-  } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
-  }
-};
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    try {
+      await queryClient.ensureQueryData(singleQuery(params.id));
+      return params.id;
+    } catch (error) {
+      toast.error(error.response.data.msg);
+      return redirect("/dashboard/all-jobs");
+    }
+  };
 // ACTION
-export const action = async ({ request, params }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  try {
-    await customFetch.patch(`/jobs/${params.id}`, data);
-    toast.success("Job updated successfully");
-    return redirect("/dashboard/all-jobs");
-  } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
-  }
-};
+export const action =
+  (queryClient) =>
+  async ({ request, params }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+    try {
+      await customFetch.patch(`/jobs/${params.id}`, data);
+      queryClient.invalidateQueries(["jobs"]);
+      toast.success("Job updated successfully");
+      return redirect("/dashboard/all-jobs");
+    } catch (error) {
+      toast.error(error.response.data.msg);
+      return error;
+    }
+  };
 const EditJob = () => {
   // const params = useParams();
   // console.log(params);
-  const { job } = useLoaderData();
+
+  // const { job } = useLoaderData();
+  const id = useLoaderData();
+  const {
+    data: { job },
+  } = useQuery(singleQuery(id));
 
   // const navigation = useNavigation();
   // const isSubmitting = navigation.state === "submitting";
@@ -45,8 +66,8 @@ const EditJob = () => {
       <Form method="post" className="form">
         <h4 className="form-title">Edit Job</h4>
         <div className="form-center">
-          <FormRow type="text" name="company" />
-          <FormRow type="text" name="position" />
+          <FormRow type="text" name="company" defaultValue={job.company} />
+          <FormRow type="text" name="position" defaultValue={job.position} />
           <FormRow
             type="text"
             labelText="job location"

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 import Wrapper from "../assets/wrappers/Dashboard";
 import { Navbar, BigSidebar, SmallSidebar, Loading } from "../components";
@@ -48,6 +48,7 @@ const DashboardLayout = ({ queryClient }) => {
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
+  const [isAuthError, setIsAuthError] = useState(false);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -62,9 +63,27 @@ const DashboardLayout = ({ queryClient }) => {
 
   const logoutUser = async () => {
     navigate("/");
-    await customFetch("/auth/logout");
+    await customFetch.get("/auth/logout");
+    queryClient.invalidateQueries();
     toast.success("Logging out...");
   };
+
+  customFetch.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      if (error?.response?.status === 401) {
+        setIsAuthError(true);
+      }
+      return Promise.reject(error);
+    }
+  );
+
+  useEffect(() => {
+    if (!isAuthError) return;
+    logoutUser();
+  }, [isAuthError]);
 
   return (
     <DashboardContext.Provider

@@ -8,6 +8,8 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import { body, validationResult } from "express-validator";
 import { MONGO_URL, PORT } from "./config/constant.js";
+import helmet from "helmet";
+import mongoSanitize from "express-mongo-sanitize";
 
 //  ROUTES
 import authRouter from "./routes/authRouter.js";
@@ -44,6 +46,8 @@ app.use(express.static(path.resolve(__dirname, "./client/dist")));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(mongoSanitize());
 
 app.use("/api/v1/jobs", authenticateUser, jobRouter);
 app.use("/api/v1/users", authenticateUser, userRouter);
@@ -53,12 +57,12 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
 });
 
-app.get("/", (req, res) => {
-  res.send("welcome");
-});
-app.get("/api/v1/test", (req, res) => {
-  res.json({ msg: "test route" });
-});
+// app.get("/", (req, res) => {
+//   res.send("welcome");
+// });
+// app.get("/api/v1/test", (req, res) => {
+//   res.json({ msg: "test route" });
+// });
 
 // app.post("/api/v1/test", validateTest, (req, res) => {
 //   const { name } = req.body;
